@@ -48,22 +48,4 @@
   e$input.onkeyup = function() { test(); };
 
   test();
-
-  // alert(jsSHA);
-
-
-    // function newHash() {
-    //   var inputTypeSelectBox = document.getElementById("hashInputType");
-    //   hashObj = new jsSHA(document.getElementById("hashInputText").value,
-    //                inputTypeSelectBox.options[inputTypeSelectBox.selectedIndex].text);
-    //   calcHash();
-    // }
-    // function calcHash() {
-    //   var hashVariantSelectBox = document.getElementById("hashVariant");
-    //   try {
-    //     document.getElementById("hashOutputText").value = hashObj.getHash(hashVariantSelectBox.options[hashVariantSelectBox.selectedIndex].text, "HEX");
-    //   } catch(e) {
-    //   }
-    // }
-
 })();
