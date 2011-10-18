@@ -287,31 +287,20 @@ var AES = {};
       }
 
       // initial round key addition
-      console.log("start of round 0:    " + state.hex());
       state = addRoundKey(state, _w, 0);
-      console.log("round key value:     " + roundKey(_w, 0).hex());
 
       // 9, 11 or 13 rounds
       for (round = 1; round <= Nr - 1; round++) {
-        console.log("start of round " + round + ":    " + state.hex());
         subBytes(state);
-        console.log("after subBytes:      " + state.hex());
         shiftRows(state);
-        console.log("after shiftRows:     " + state.hex());
         mixColumns(state);
-        console.log("after mixColumns:    " + state.hex());
         addRoundKey(state, _w, round);
-        console.log("round key value:     " + roundKey(_w, round).hex());
       }
 
       // final round
-      console.log("start of round " + Nr + ":   " + state.hex());
       subBytes(state);
-      console.log("after subBytes:      " + state.hex());
       shiftRows(state);
-      console.log("after shiftRows:     " + state.hex());
       addRoundKey(state, _w, Nr);
-      console.log("round key value:     " + roundKey(_w, Nr).hex());
 
       // the final state is copied to the output as described in [3.4]
       for (i = 0; i < 4 * Nb; i++) {
@@ -339,31 +328,20 @@ var AES = {};
       }
 
       // initial round key addition
-      console.log("start of round 0:    " + state.hex());
       state = addRoundKey(state, _w, Nr);
-      console.log("round key value:     " + roundKey(_w, Nr).hex());
 
       // 9, 11 or 13 rounds
       for (round = 1; round <= Nr - 1; round++) {
-        console.log("start of round " + round + ":    " + state.hex());
         invShiftRows(state);
-        console.log("after invShiftRows:  " + state.hex());
         invSubBytes(state);
-        console.log("after invSubBytes:   " + state.hex());
         addRoundKey(state, _w, Nr - round);
-        console.log("round key value:     " + roundKey(_w, Nr - round).hex());
         invMixColumns(state);
-        console.log("after invMixColumns: " + state.hex());
       }
 
       // final round
-      console.log("start of round " + Nr + ":   " + state.hex());
       invShiftRows(state);
-      console.log("after invShiftRows:  " + state.hex());
       invSubBytes(state);
-      console.log("after invSubBytes:   " + state.hex());
       addRoundKey(state, _w, 0);
-      console.log("round key value:     " + roundKey(_w, 0).hex());
 
       // the final state is copied to the output as described in [3.4]
       for (i = 0; i < 4 * Nb; i++) {
