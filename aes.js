@@ -1,5 +1,3 @@
-/*global console */
-
 /**
  * The Advanced Encryption Standard (AES) specifies a FIPS-approved
  * cryptographic algorithm that can be used to protect electronic data.
