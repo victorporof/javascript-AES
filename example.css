@@ -1,0 +1,19 @@
+body {
+  font-family: monospace;
+}
+
+span {
+  display: inline-block;
+  width: 75px;
+  white-space: pre;
+}
+
+input[type=text] {
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+p {
+  white-space: nowrap;
+  line-height: 15px;
+}
